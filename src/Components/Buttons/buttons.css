@@ -1,0 +1,52 @@
+.darkmode-switch {
+    --container-height: 30px;
+    --container-light: #83D8FF;
+    --container-border-radius: 84px;
+    --switch-button-size: 20px;
+    --switch-button-position: 6px;
+    --switch-button-scale: 1;
+}
+
+.darkmode-switch:hover {
+    /*--switch-button-size: 22px;*/
+    /*--switch-button-position: 5px;*/
+    --switch-button-scale: 1.13;
+}
+
+.darkmode-switch input {
+    display: none;
+}
+
+.darkmode-switch label {
+    cursor: pointer;
+    display: flex;
+    width: calc(2 * var(--container-height));
+    height: var(--container-height);
+    background-color: var(--container-light);
+    border-radius: var(--container-border-radius);
+    transition: background-color 200ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    position: relative;
+}
+
+.darkmode-switch input:checked + label {
+    background-color: #749DD6;
+    justify-content: flex-end;
+}
+
+.darkmode-switch input:checked + label .darkmode-switch-button {
+    left: calc(var(--container-height) * 2 - var(--switch-button-position) - var(--switch-button-size));
+    background-color: #FFE5B5;
+}
+
+.darkmode-switch-button {
+    position: absolute;
+    width: var(--switch-button-size);
+    height: var(--switch-button-size);
+    border-radius: 50%;
+    cursor: pointer;
+    top: 50%;
+    background-color: #FFCF96;
+    left: var(--switch-button-position);
+    transform: translateY(-50%) scale(var(--switch-button-scale));
+    transition: all 300ms cubic-bezier(0.68, -0.55, 0.365, 1.85);
+}

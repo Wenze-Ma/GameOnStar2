@@ -1,0 +1,42 @@
+.home {
+    --star1-top: 0%;
+    --star1-left: 8%;
+    --star2-top: 40%;
+    --star2-left: 60%;
+    --star3-top: 45%;
+    --star3-left: 25%;
+    --star4-top: 0%;
+    --star4-right: 0%;
+
+    --star1-width: 30%;
+    --star2-width: 10%;
+    --star3-width: 8%;
+    --star4-width: 40%;
+}
+
+.home div {
+    overflow: clip;
+    position: absolute;
+}
+
+.home div:first-child img {
+    /*transform: scale(1.2);*/
+    transform-origin: 50% 90%;
+
+}
+
+.home .home-title {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    font-family: 'Bungee', cursive;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6vw;
+    flex-wrap: wrap;
+}

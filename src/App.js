@@ -1,20 +1,29 @@
-import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Header from "./Components/Navigation/Header";
+import Home from "./Pages/Home";
+import Games from "./Pages/Games";
+import Categories from "./Pages/Categories";
+import Online from "./Pages/Online";
+import {useState} from "react";
+import {ThemeContext} from "./Utilities/ThemeContext";
 
-function App() {
+const App = () => {
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
     return (
-        <div className="App">
-            <header className="App-header">
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <ThemeContext.Provider value={theme}>
+            <BrowserRouter>
+                <Header setTheme={setTheme}/>
+                <div className={`body ${theme}`}>
+                    <Routes>
+                        <Route exact path='/' element={<Home/>}/>
+                        <Route path='/games' element={<Games/>}/>
+                        <Route path='/categories' element={<Categories/>}/>
+                        <Route path='/online' element={<Online/>}/>
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </ThemeContext.Provider>
     );
-}
+};
 
 export default App;
