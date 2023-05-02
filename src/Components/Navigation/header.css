@@ -49,17 +49,28 @@
     text-align: center;
     line-height: var(--header-height);
     padding: 0 10px;
-    /*font-weight: bold;*/
+    transition: 0.3s;
 }
 
 .header-tab.selected {
     color: white;
-    transition: 0.3s;
+}
+
+.dark .header-tab.selected {
+    color: black;
 }
 
 .header-tab:not(.selected):hover {
-    text-shadow: 2px 4px 4px rgba(46,91,173,0.6);
+    text-shadow: 2px 4px 4px rgba(46, 91, 173, 0.6);
     transition: 0.3s;
+}
+
+.light .header-tab-selected {
+    background: linear-gradient(135deg, rgba(250, 205, 104, 0.8), rgba(252, 118, 179, 0.8));
+}
+
+.dark .header-tab-selected {
+    background: linear-gradient(135deg, rgba(254, 246, 243, 0.8), rgba(197, 232, 251, 0.8));
 }
 
 .header-tab-selected {
@@ -70,7 +81,11 @@
     border-radius: 50px;
     /*background: linear-gradient(to right, #F09819, #FF5858);*/
     /*background: linear-gradient(to right, #fee140, #fa709a);*/
-    background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);
+    /*background: linear-gradient(144deg,#af40ff,#5b42f3 50%,#00ddeb);*/
+    /*background: linear-gradient(135deg, rgba(156, 109, 176, 1), rgba(25, 58, 78, 1));*/
+    /*background: linear-gradient(135deg, rgba(29, 229, 226, 0.8), rgba(181, 136, 247, 0.8));*/
+    /*background: linear-gradient(135deg, rgba(250, 205, 104, 0.8), rgba(252, 118, 179, 0.8));*/
+    /*background: linear-gradient(135deg, rgba(246, 242, 233, 0.8), rgba(142, 212, 202, 0.8));*/
 
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

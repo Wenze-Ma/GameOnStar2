@@ -5,6 +5,7 @@ import star3 from '../Resources/star3.png';
 import star4 from '../Resources/star4.png';
 import {useEffect, useState} from "react";
 import './pages.css';
+import Loading from "../Components/Loading/Loading";
 
 const Home = () => {
 
@@ -58,7 +59,8 @@ const Home = () => {
                 <img src={star4} alt='' width='100%' height='100%'/>
             </div>
             <div className='home-title'>
-                <p>GAME ON STAR</p>
+                {/*<p>GAME ON STAR</p>*/}
+                <Loading/>
             </div>
         </div>
     );
